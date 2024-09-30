@@ -5,6 +5,7 @@ import globalErrorHandler from './app/middlewares/GlobalErrorHandler';
 import notFound from './app/middlewares/notFound';
 import { UserRoutes } from './app/modules/user/user.route';
 import { AuthRoutes } from './app/modules/auth/auth.route';
+import { PostRoutes } from './app/modules/posts/post.route';
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.get('/', (req, res) => {
 // ///application routes
 app.use('/api', UserRoutes);
 app.use('/api', AuthRoutes);
+app.use('/api', PostRoutes);
 
 // //middlewares
 

@@ -1,11 +1,12 @@
 import express from 'express';
 import validateRequest from '../../middlewares/validateRequest';
 import { PostController } from './post.controller';
+import { PostValidation } from './post.validation';
 const router = express.Router();
 
 router.post(
   '/post',
-  validateRequest(UserValidation.CreateUserValidationSchema),
+  validateRequest(PostValidation.CreatePostValidationSchema),
   PostController.createPost,
 );
 
