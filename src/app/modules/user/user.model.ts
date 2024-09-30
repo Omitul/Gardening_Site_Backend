@@ -9,6 +9,7 @@ const TUserSchema = new Schema({
   password: { type: String, required: true },
   profilePicture: { type: String },
   role: { type: String, enum: ['user', 'admin'], default: 'user' },
+  posts: [{ type: Schema.Types.ObjectId, ref: 'Post' }],
   following: [{ type: Schema.Types.ObjectId, ref: 'User' }],
   followers: [{ type: Schema.Types.ObjectId, ref: 'User' }],
   verified: { type: Boolean, default: false },

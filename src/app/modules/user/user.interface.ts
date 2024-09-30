@@ -9,6 +9,7 @@ export type TUser = {
   following?: string[];
   followers?: string[];
   verified?: boolean;
+  posts?: string[];
   accountType?: 'basic' | 'premium';
 };
 

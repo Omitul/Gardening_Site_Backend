@@ -11,6 +11,7 @@ export const CreateUserValidationSchema = z.object({
     followers: z.array(z.string()).optional(),
     verified: z.boolean().default(false).optional(),
     accountType: z.enum(['basic', 'premium']).default('basic').optional(),
+    posts: z.array(z.string()).optional(),
   }),
 });
 
@@ -25,6 +26,7 @@ export const UpdateUserValidationSchema = z.object({
     followers: z.array(z.string()).optional(),
     verified: z.boolean().optional(),
     accountType: z.enum(['basic', 'premium']).optional(),
+    posts: z.array(z.string()).optional(),
   }),
 });
 

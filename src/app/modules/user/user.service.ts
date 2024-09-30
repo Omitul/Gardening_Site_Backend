@@ -6,6 +6,8 @@ const CreateUserIntoDb = async (payload: TUser) => {
   return result;
 };
 
+const postId = '66fb222161aad154c96e3b3d';
+
 export const UserServices = {
   CreateUserIntoDb,
 };
