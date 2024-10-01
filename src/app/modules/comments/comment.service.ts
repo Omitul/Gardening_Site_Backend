@@ -12,8 +12,13 @@ const UpdateCommentIntoDb = async (id: string, payload: Partial<TComment>) => {
   });
   return result;
 };
+const DeleteCommentFromDb = async (id: string) => {
+  const result = await TCommentModel.findByIdAndDelete(id);
+  return result;
+};
 
 export const CommentServices = {
   CreateCommentIntoDb,
   UpdateCommentIntoDb,
+  DeleteCommentFromDb,
 };
