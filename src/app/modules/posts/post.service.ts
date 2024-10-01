@@ -11,6 +11,19 @@ const CreatePostIntoDb = async (payload: Tpost) => {
   return result;
 };
 
+const UpdatePostIntoDb = async (id: string, payload: Partial<Tpost>) => {
+  const result = await TPostModel.findOneAndUpdate({ _id: id }, payload, {
+    new: true,
+  });
+  return result;
+};
+const DeletePostFromDb = async (id: string) => {
+  const result = await TPostModel.findByIdAndDelete(id);
+  return result;
+};
+
 export const PostServices = {
   CreatePostIntoDb,
+  UpdatePostIntoDb,
+  DeletePostFromDb,
 };
