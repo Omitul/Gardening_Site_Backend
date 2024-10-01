@@ -8,4 +8,4 @@ const CommentSchema = new Schema({
   updatedAt: { type: Date, default: Date.now },
 });
 
-export const CommentModel = model('Comment', CommentSchema);
+export const TUserModel = model('Comment', CommentSchema);
