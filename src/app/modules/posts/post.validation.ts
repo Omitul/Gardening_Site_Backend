@@ -10,6 +10,7 @@ export const CreatePostValidationSchema = z.object({
     isPremium: z.boolean().default(false).optional(),
     images: z.array(z.string()).optional(),
     videos: z.array(z.string()).optional(),
+    comments: z.array(z.string().length(24)).optional(),
   }),
 });
 
@@ -23,6 +24,7 @@ export const UpdatePostValidationSchema = z.object({
     isPremium: z.boolean().optional(),
     images: z.array(z.string()).optional(),
     videos: z.array(z.string()).optional(),
+    comments: z.array(z.string().length(24)).optional(),
   }),
 });
 

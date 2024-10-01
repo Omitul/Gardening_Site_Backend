@@ -19,4 +19,4 @@ router.patch(
 
 router.delete('/comment', CommentController.DeleteComment);
 
-export const UserRoutes = router;
+export const CommentRoutes = router;

@@ -11,4 +11,5 @@ export type Tpost = {
   isPremium: boolean;
   images: string[];
   videos: string[];
+  comments: Types.ObjectId[];
 };

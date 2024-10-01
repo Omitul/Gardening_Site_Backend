@@ -12,6 +12,7 @@ const TPostSchema = new Schema({
   isPremium: { type: Boolean, default: false },
   images: [{ type: String }],
   videos: [{ type: String }],
+  comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
 });
 
 export const TPostModel = model<Tpost>('Post', TPostSchema);
