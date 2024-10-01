@@ -9,5 +9,11 @@ router.post(
   validateRequest(PostValidation.CreatePostValidationSchema),
   PostController.createPost,
 );
+router.put(
+  '/post',
+  validateRequest(PostValidation.UpdatePostValidationSchema),
+  PostController.UpdatePost,
+);
+router.delete('/post', PostController.DeletePost);
 
 export const PostRoutes = router;
