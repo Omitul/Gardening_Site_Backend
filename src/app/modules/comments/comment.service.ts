@@ -6,6 +6,14 @@ const CreateCommentIntoDb = async (payload: TComment) => {
   return result;
 };
 
+const UpdateCommentIntoDb = async (id: string, payload: Partial<TComment>) => {
+  const result = await TCommentModel.findOneAndUpdate({ _id: id }, payload, {
+    new: true,
+  });
+  return result;
+};
+
 export const CommentServices = {
   CreateCommentIntoDb,
+  UpdateCommentIntoDb,
 };

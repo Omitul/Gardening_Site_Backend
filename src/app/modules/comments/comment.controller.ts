@@ -3,7 +3,7 @@ import catchAsync from '../../utils/catchAsync';
 import httpStatus from 'http-status';
 import { CommentServices } from './comment.service';
 
-const createUser = catchAsync(async (req, res) => {
+const createComment = catchAsync(async (req, res) => {
   const result = await CommentServices.CreateCommentIntoDb(req.body);
 
   sendResponse(res, {
@@ -14,6 +14,19 @@ const createUser = catchAsync(async (req, res) => {
   });
 });
 
-export const UserController = {
-  createUser,
+const UpdateComment = catchAsync(async (req, res) => {
+  const id = req.params.id.trim();
+  const result = await CommentServices.UpdateCommentIntoDb(id, req.body);
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Comment edited successfully',
+    data: result,
+  });
+});
+
+export const CommentController = {
+  createComment,
+  UpdateComment,
 };
