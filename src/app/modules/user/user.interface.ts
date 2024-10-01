@@ -1,3 +1,4 @@
+import { Types } from 'mongoose';
 import { USER_ROLE } from './user.constant';
 
 export type TUser = {
@@ -9,7 +10,7 @@ export type TUser = {
   following?: string[];
   followers?: string[];
   verified?: boolean;
-  posts?: string[];
+  posts?: Types.ObjectId[];
   accountType?: 'basic' | 'premium';
 };
 
