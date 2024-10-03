@@ -7,8 +7,10 @@ const router = express.Router();
 router.post(
   '/post',
   validateRequest(PostValidation.CreatePostValidationSchema),
-  PostController.createPost,
+  PostController.getPost,
 );
+
+router.get('/post', PostController.getPost);
 router.put(
   '/post',
   validateRequest(PostValidation.UpdatePostValidationSchema),
