@@ -5,7 +5,7 @@ export type TUser = {
   username: string;
   email: string;
   password: string;
-  profilePicture: string;
+  profilePicture?: string;
   role: 'user' | 'admin';
   following?: string[];
   followers?: string[];

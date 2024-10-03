@@ -11,6 +11,12 @@ router.post(
   UserController.createUser,
 );
 
+router.put(
+  '/user/:id',
+  validateRequest(UserValidation.UpdateUserValidationSchema),
+  UserController.UpdateUser,
+);
+
 router.get('/user/:id', UserController.GetUser);
 
 export const UserRoutes = router;
