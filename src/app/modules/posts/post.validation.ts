@@ -6,7 +6,6 @@ export const CreatePostValidationSchema = z.object({
     content: z.string().min(1),
     author: z.string().length(24),
     category: z.string().min(1),
-    tags: z.array(z.string()),
     isPremium: z.boolean().default(false).optional(),
     images: z.array(z.string()).optional(),
     videos: z.array(z.string()).optional(),

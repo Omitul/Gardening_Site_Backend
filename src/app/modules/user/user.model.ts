@@ -2,12 +2,13 @@ import { model, Schema } from 'mongoose';
 import { TUser } from './user.interface';
 import config from '../../config';
 import bcrypt from 'bcrypt';
+import { required } from 'joi';
 
 const TUserSchema = new Schema({
   username: { type: String, required: true, unique: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  profilePicture: { type: String },
+  profilePicture: { type: String, required: true },
   role: { type: String, enum: ['user', 'admin'], default: 'user' },
   posts: [{ type: Schema.Types.ObjectId, ref: 'Post' }],
   following: [{ type: Schema.Types.ObjectId, ref: 'User' }],

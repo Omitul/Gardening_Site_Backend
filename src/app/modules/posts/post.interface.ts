@@ -5,7 +5,6 @@ export type Tpost = {
   content: string;
   author: Types.ObjectId;
   category: string;
-  tags: string[];
   votes: number;
   createdAt: Date;
   isPremium: boolean;

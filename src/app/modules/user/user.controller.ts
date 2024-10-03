@@ -14,6 +14,19 @@ const createUser = catchAsync(async (req, res) => {
   });
 });
 
+const GetUser = catchAsync(async (req, res) => {
+  const user = req.params.id.trim();
+  const result = await UserServices.getUserFromDb(user);
+
+  sendResponse(res, {
+    success: true,
+    statusCode: httpStatus.OK,
+    message: 'User found succesfully',
+    data: result,
+  });
+});
+
 export const UserController = {
   createUser,
+  GetUser,
 };

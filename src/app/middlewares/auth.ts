@@ -3,8 +3,8 @@ import catchAsync from '../utils/catchAsync';
 import jwt, { JwtPayload } from 'jsonwebtoken';
 import { NextFunction, Request, Response } from 'express';
 import config from '../config';
-import TUserModel from '../modules/user/user.model';
 import { TUserRole } from '../modules/user/user.interface';
+import { TUserModel } from '../modules/user/user.model';
 
 const auth = (...requiredRoles: TUserRole[]) => {
   return catchAsync(async (req: Request, res: Response, next: NextFunction) => {
