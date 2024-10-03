@@ -1,9 +1,7 @@
-import { Document } from 'mongoose';
+import { Document, ObjectId, Types } from 'mongoose';
 
 export interface TComment extends Document {
   content: string;
-  post: string;
-  author: string;
-  createdAt: Date;
-  updatedAt: Date;
+  post: Types.ObjectId[];
+  author: Types.ObjectId;
 }

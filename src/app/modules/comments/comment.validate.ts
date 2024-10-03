@@ -3,8 +3,8 @@ import { z } from 'zod';
 export const CreateCommentValidationSchema = z.object({
   body: z.object({
     content: z.string().min(1),
-    post: z.string().nonempty(),
-    author: z.string().nonempty(),
+    post: z.string(),
+    author: z.string(),
   }),
 });
 
