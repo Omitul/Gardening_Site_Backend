@@ -13,11 +13,7 @@ router.post(
 
 router.get('/comment', CommentController.createComment);
 
-router.patch(
-  '/comment',
-  validateRequest(CommentValidation.UpdateCommentValidationSchema),
-  CommentController.createComment,
-);
+router.patch('/comment', CommentController.createComment);
 
 router.delete('/comment', CommentController.DeleteComment);
 
