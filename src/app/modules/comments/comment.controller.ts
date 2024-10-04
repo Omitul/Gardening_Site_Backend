@@ -14,6 +14,17 @@ const createComment = catchAsync(async (req, res) => {
     data: result,
   });
 });
+const getComment = catchAsync(async (req, res) => {
+  const id = req.params.id.trim();
+  const result = await CommentServices.getCommentFromDb(id);
+
+  sendResponse(res, {
+    success: true,
+    statusCode: httpStatus.OK,
+    message: 'Comment fetched succesfully',
+    data: result,
+  });
+});
 
 const UpdateComment = catchAsync(async (req, res) => {
   const id = req.params.id.trim();
@@ -43,4 +54,5 @@ export const CommentController = {
   createComment,
   UpdateComment,
   DeleteComment,
+  getComment,
 };

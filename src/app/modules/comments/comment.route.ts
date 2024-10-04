@@ -11,6 +11,8 @@ router.post(
   CommentController.createComment,
 );
 
+router.get('/comment', CommentController.createComment);
+
 router.patch(
   '/comment',
   validateRequest(CommentValidation.UpdateCommentValidationSchema),

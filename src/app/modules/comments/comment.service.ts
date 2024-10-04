@@ -6,6 +6,13 @@ const CreateCommentIntoDb = async (payload: TComment) => {
   return result;
 };
 
+const getCommentFromDb = async (_id: string) => {
+  const result = await TCommentModel.findById(_id)
+    .populate('user')
+    .populate('post');
+  return result;
+};
+
 const UpdateCommentIntoDb = async (id: string, payload: Partial<TComment>) => {
   const result = await TCommentModel.findOneAndUpdate({ _id: id }, payload, {
     new: true,
@@ -21,4 +28,5 @@ export const CommentServices = {
   CreateCommentIntoDb,
   UpdateCommentIntoDb,
   DeleteCommentFromDb,
+  getCommentFromDb,
 };
