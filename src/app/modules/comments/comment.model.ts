@@ -6,4 +6,4 @@ const CommentSchema = new Schema({
   author: { type: Schema.Types.ObjectId, ref: 'User', required: true },
 });
 
-export const TUserModel = model('Comment', CommentSchema);
+export const TCommentModel = model('Comment', CommentSchema);
