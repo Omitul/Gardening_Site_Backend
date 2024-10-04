@@ -6,7 +6,6 @@ const TPostSchema = new Schema({
   content: { type: String, required: true },
   author: { type: Schema.Types.ObjectId, ref: 'User', required: true },
   category: { type: String, required: true },
-  tags: [{ type: String }],
   votes: { type: Number, default: 0 },
   createdAt: { type: Date, default: Date.now },
   isPremium: { type: Boolean, default: false },

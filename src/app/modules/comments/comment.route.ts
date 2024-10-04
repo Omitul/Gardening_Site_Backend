@@ -11,7 +11,7 @@ router.post(
   CommentController.createComment,
 );
 
-router.get('/comment', CommentController.createComment);
+router.get('/comment/:id', CommentController.getComment);
 
 router.patch('/comment', CommentController.createComment);
 

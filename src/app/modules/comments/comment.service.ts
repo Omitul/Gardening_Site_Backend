@@ -6,10 +6,10 @@ const CreateCommentIntoDb = async (payload: TComment) => {
   return result;
 };
 
-const getCommentFromDb = async (_id: string) => {
-  const result = await TCommentModel.findById(_id)
-    .populate('user')
-    .populate('post');
+const getCommentFromDb = async (postId: string) => {
+  const result = await TCommentModel.find({ post: postId })
+    .populate('author')
+    .exec();
   return result;
 };
 
