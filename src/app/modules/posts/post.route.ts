@@ -12,7 +12,7 @@ router.post(
 
 router.get('/post', PostController.getPost);
 router.put(
-  '/post',
+  '/post/:id',
   validateRequest(PostValidation.UpdatePostValidationSchema),
   PostController.UpdatePost,
 );

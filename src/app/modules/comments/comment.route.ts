@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.post(
   '/comment',
-  // validateRequest(CommentValidation.CreateCommentValidationSchema),
+  validateRequest(CommentValidation.CreateCommentValidationSchema),
   CommentController.createComment,
 );
 
