@@ -11,6 +11,8 @@ const TPostSchema = new Schema({
   isPremium: { type: Boolean, default: false },
   images: [{ type: String }],
   videos: [{ type: String }],
+  upvoted: { type: Boolean, default: false },
+  downvoted: { type: Boolean, default: false },
   comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
 });
 
