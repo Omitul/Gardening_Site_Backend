@@ -25,6 +25,19 @@ const getPost = catchAsync(async (req, res) => {
   });
 });
 
+const getSinglePost = catchAsync(async (req, res) => {
+  const id = req.params.id.trim();
+  console.log(id);
+  const result = await PostServices.getSinglePostFromDb(id);
+
+  sendResponse(res, {
+    success: true,
+    statusCode: httpStatus.OK,
+    message: 'post fetched succesfully',
+    data: result,
+  });
+});
+
 const UpdatePost = catchAsync(async (req, res) => {
   const id = req.params.id.trim();
   const result = await PostServices.UpdatePostIntoDb(id, req.body);
@@ -54,4 +67,5 @@ export const PostController = {
   DeletePost,
   UpdatePost,
   getPost,
+  getSinglePost,
 };

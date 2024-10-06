@@ -11,6 +11,7 @@ router.post(
 );
 
 router.get('/post', PostController.getPost);
+router.get('/post/:id', PostController.getSinglePost);
 router.put(
   '/post/:id',
   validateRequest(PostValidation.UpdatePostValidationSchema),
