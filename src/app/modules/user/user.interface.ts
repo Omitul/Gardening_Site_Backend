@@ -10,7 +10,7 @@ export type TUser = {
   following?: string[];
   followers?: string[];
   verified?: boolean;
-  favourites: string[];
+  favourites?: string[];
   posts?: Types.ObjectId[];
   accountType?: 'basic' | 'premium';
 };
