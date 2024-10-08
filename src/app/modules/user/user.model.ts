@@ -13,6 +13,7 @@ const TUserSchema = new Schema({
   posts: [{ type: Schema.Types.ObjectId, ref: 'Post' }],
   following: [{ type: Schema.Types.ObjectId, ref: 'User' }],
   followers: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+  favourites: [{ type: String, ref: 'Post' }],
   verified: { type: Boolean, default: false },
   accountType: { type: String, enum: ['basic', 'premium'], default: 'basic' },
 });
