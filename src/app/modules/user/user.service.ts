@@ -7,7 +7,10 @@ const CreateUserIntoDb = async (payload: TUser) => {
 };
 
 export const getUserFromDb = async (userId: string) => {
-  const user = await TUserModel.findById(userId).populate('followers').exec();
+  const user = await TUserModel.findById(userId)
+    .populate('followers')
+    .populate('following')
+    .exec();
   return user;
 };
 

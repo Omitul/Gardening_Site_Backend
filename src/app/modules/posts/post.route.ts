@@ -17,6 +17,6 @@ router.put(
   validateRequest(PostValidation.UpdatePostValidationSchema),
   PostController.UpdatePost,
 );
-router.delete('/post', PostController.DeletePost);
+router.delete('/post/:id', PostController.DeletePost);
 
 export const PostRoutes = router;

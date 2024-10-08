@@ -13,8 +13,8 @@ router.post(
 
 router.get('/comment/:id', CommentController.getComment);
 
-router.patch('/comment', CommentController.createComment);
+router.patch('/comment/:id', CommentController.UpdateComment);
 
-router.delete('/comment', CommentController.DeleteComment);
+router.delete('/comment/:id', CommentController.DeleteComment);
 
 export const CommentRoutes = router;
