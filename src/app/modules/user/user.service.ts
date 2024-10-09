@@ -10,6 +10,7 @@ export const getUserFromDb = async (userId: string) => {
   const user = await TUserModel.findById(userId)
     .populate('followers')
     .populate('following')
+    .populate('favourites')
     .exec();
   return user;
 };

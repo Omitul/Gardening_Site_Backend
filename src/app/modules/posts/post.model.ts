@@ -10,9 +10,7 @@ const TPostSchema = new Schema({
   createdAt: { type: Date, default: Date.now },
   isPremium: { type: Boolean, default: false },
   images: [{ type: String }],
-  videos: [{ type: String }],
   upvoted: { type: Boolean, default: false },
-  favourite: [{ type: String }],
   downvoted: { type: Boolean, default: false },
   comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
 });
