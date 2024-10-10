@@ -11,5 +11,7 @@ export type Tpost = {
   images: string[];
   upvoted: boolean;
   downvoted: boolean;
+  upvotes: string[];
+  downvotes: string[];
   comments: Types.ObjectId[];
 };

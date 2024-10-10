@@ -5,7 +5,7 @@ import { TPostModel } from './post.model';
 const CreatePostIntoDb = async (payload: Tpost) => {
   const result = await TPostModel.create(payload);
 
-  const user = await TUserModel.findById(result.author._id);
+  // const user = await TUserModel.findById(result.author._id);
   return result;
 };
 
@@ -31,7 +31,6 @@ const getSinglePostFromDb = async (postId: string) => {
 const UpdatePostIntoDb = async (id: string, payload: Partial<Tpost>) => {
   const result = await TPostModel.findOneAndUpdate({ _id: id }, payload, {
     new: true,
-    runValidators: true,
   });
   return result;
 };
