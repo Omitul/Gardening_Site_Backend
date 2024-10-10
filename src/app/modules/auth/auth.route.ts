@@ -11,4 +11,6 @@ router.post(
   AuthController.loginUser,
 );
 
+router.post('/auth/reset-password', AuthController.ResetPassword);
+
 export const AuthRoutes = router;

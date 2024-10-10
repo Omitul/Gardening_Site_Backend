@@ -10,7 +10,10 @@ const CreatePostIntoDb = async (payload: Tpost) => {
 };
 
 const getPostFromDb = async () => {
-  const result = await TPostModel.find().populate('comments').exec();
+  const result = await TPostModel.find()
+    .populate('comments')
+    .populate('author')
+    .exec();
 
   // console.log(result.author);
   // const user = await TUserModel.findById(result.author._id);
