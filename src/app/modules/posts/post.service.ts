@@ -22,15 +22,16 @@ const getPostFromDb = async () => {
 };
 
 const getSinglePostFromDb = async (postId: string) => {
-  const result = await TPostModel.find({ author: postId });
-  // .populate('author')
-  // .exec();
+  const result = await TPostModel.find({ author: postId })
+    .populate('author')
+    .exec();
   return result;
 };
 
 const UpdatePostIntoDb = async (id: string, payload: Partial<Tpost>) => {
   const result = await TPostModel.findOneAndUpdate({ _id: id }, payload, {
     new: true,
+    runValidators: true,
   });
   return result;
 };
