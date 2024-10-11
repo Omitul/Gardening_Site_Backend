@@ -2,6 +2,6 @@ export type Torder = {
   name: string;
   email: string;
   contactNo: string;
-  price: number;
+  price: string;
   address: string;
 };

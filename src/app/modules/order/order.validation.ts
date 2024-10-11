@@ -7,7 +7,7 @@ export const CreateOrderValidationSchema = z.object({
     contactNo: z
       .string()
       .regex(/^\d{10,}$/, 'Contact number must be at least 10 digits'),
-    price: z.number().positive(),
+    price: z.string(),
     address: z.string().min(1),
   }),
 });
