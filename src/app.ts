@@ -7,6 +7,7 @@ import { UserRoutes } from './app/modules/user/user.route';
 import { AuthRoutes } from './app/modules/auth/auth.route';
 import { PostRoutes } from './app/modules/posts/post.route';
 import { CommentRoutes } from './app/modules/comments/comment.route';
+import { OrderRoutes } from './app/modules/order/order.route';
 
 const app = express();
 
@@ -24,6 +25,7 @@ app.use('/api', UserRoutes);
 app.use('/api', AuthRoutes);
 app.use('/api', PostRoutes);
 app.use('/api', CommentRoutes);
+app.use('/api', OrderRoutes);
 
 // //middlewares
 
