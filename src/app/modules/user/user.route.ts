@@ -17,6 +17,7 @@ router.put(
   UserController.UpdateUser,
 );
 
-router.get('/user/:id', UserController.GetUser);
+router.get('/user/:id', UserController.GetSingleUser);
+router.get('/user', UserController.GetUsers);
 
 export const UserRoutes = router;

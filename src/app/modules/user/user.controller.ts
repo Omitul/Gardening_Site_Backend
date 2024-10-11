@@ -14,7 +14,7 @@ const createUser = catchAsync(async (req, res) => {
   });
 });
 
-const GetUser = catchAsync(async (req, res) => {
+const GetSingleUser = catchAsync(async (req, res) => {
   const user = req.params.id.trim();
   const result = await UserServices.getUserFromDb(user);
 
@@ -22,6 +22,17 @@ const GetUser = catchAsync(async (req, res) => {
     success: true,
     statusCode: httpStatus.OK,
     message: 'User found succesfully',
+    data: result,
+  });
+});
+
+const GetUsers = catchAsync(async (req, res) => {
+  const result = await UserServices.getUsersFromDb();
+
+  sendResponse(res, {
+    success: true,
+    statusCode: httpStatus.OK,
+    message: 'Users fetched succesfully',
     data: result,
   });
 });
@@ -40,6 +51,7 @@ const UpdateUser = catchAsync(async (req, res) => {
 
 export const UserController = {
   createUser,
-  GetUser,
+  GetSingleUser,
   UpdateUser,
+  GetUsers,
 };

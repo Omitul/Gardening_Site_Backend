@@ -10,6 +10,8 @@ export const CreatePostValidationSchema = z.object({
     images: z.array(z.string()).optional(),
     upvoted: z.boolean().optional().default(false),
     downvoted: z.boolean().optional().default(false),
+    upvotes: z.array(z.string()).optional(),
+    downvvotes: z.array(z.string()).optional(),
     comments: z.array(z.string().length(24)).optional(),
   }),
 });
@@ -22,6 +24,8 @@ export const UpdatePostValidationSchema = z.object({
     category: z.string().min(1).optional(),
     isPremium: z.boolean().optional(),
     images: z.array(z.string()).optional(),
+    upvotes: z.array(z.string()).optional(),
+    downvvotes: z.array(z.string()).optional(),
     upvoted: z.boolean().optional().default(false),
     downvoted: z.boolean().optional().default(false),
     comments: z.array(z.string().length(24)).optional(),

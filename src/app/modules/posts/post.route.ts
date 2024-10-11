@@ -4,7 +4,11 @@ import { PostController } from './post.controller';
 import { PostValidation } from './post.validation';
 const router = express.Router();
 
-router.post('/post', PostController.createPost);
+router.post(
+  '/post',
+  validateRequest(PostValidation.CreatePostValidationSchema),
+  PostController.createPost,
+);
 
 router.get('/post', PostController.getPost);
 router.get('/post/:id', PostController.getSinglePost);
