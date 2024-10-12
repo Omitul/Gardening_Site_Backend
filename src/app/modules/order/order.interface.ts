@@ -4,6 +4,6 @@ export type Torder = {
   contactNo: string;
   price: string;
   address: string;
-  paymentStatus?: 'pending' | 'paid' | 'Failed';
+  paymentStatus?: 'Pending' | 'Paid' | 'Failed';
   transactionId?: string;
 };

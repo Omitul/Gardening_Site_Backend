@@ -10,8 +10,8 @@ const TOrderSchema = new Schema(
     address: { type: String, required: true },
     paymentStatus: {
       type: String,
-      enum: ['pending', 'paid', 'Failed'],
-      default: 'pending',
+      enum: ['Pending', 'Paid', 'Failed'],
+      default: 'Pending',
       required: false,
     },
 
