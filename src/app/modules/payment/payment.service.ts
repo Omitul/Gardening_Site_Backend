@@ -18,7 +18,18 @@ const ConfirmationService = async (transactionId: string, status: string) => {
     );
   }
 
-  return `<h1>Payment ${status}</h1>`;
+  return `
+    <style>
+      h1 {
+        color: green;
+        font-family: Arial, sans-serif;
+        font-size: 80px;
+        text-align: center;
+        margin-top: 50px;
+      }
+    </style>
+    <h1>Payment ${status}</h1>
+  `;
 };
 
 export const paymentServices = {
